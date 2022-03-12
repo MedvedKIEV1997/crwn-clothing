@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import "./App.css";
+
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
@@ -9,6 +9,8 @@ import SignInSignOutPage from "./pages/sign-in-sign-up/sign-in-sign-up.component
 import { selectCurrentUser } from "./redux/user/user.selector";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import { checkUserSession } from "./redux/user/user.actions";
+
+import { GlobalStyle } from "./global.styles";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -20,6 +22,7 @@ const App = () => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />

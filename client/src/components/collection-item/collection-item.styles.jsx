@@ -32,6 +32,13 @@ export const CustomButtonContainer = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const CollectionItemContainer = styled.div`
@@ -50,6 +57,19 @@ export const CollectionItemContainer = styled.div`
     ${CustomButtonContainer} {
       opacity: 0.85;
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    &:hover {
+      ${ImageContainer} {
+        opacity: unset;
+      }
+
+      ${CustomButtonContainer} {
+        opacity: unset;
+      }
     }
   }
 `;
